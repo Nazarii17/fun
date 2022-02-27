@@ -21,10 +21,11 @@ public class HeyBabe implements Runnable {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://medlabspb.ru/allergolog-immunolog/")
+            response = Unirest.get("https://medlabspb.ru")
                     .asString();
         } catch (Exception e) {
             hey();
+            System.out.println(response);
         }
     }
 
