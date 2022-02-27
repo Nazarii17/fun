@@ -10,15 +10,11 @@ public class HeyBabe implements Runnable {
     }
 
     private static void extracted() {
-        for (int i = 0; i < 2500; i++) {
+        for (int i = 0; i < 2000; i++) {
             final HeyBabe heyBabe = new HeyBabe();
-            try {
-                final Thread thread = new Thread(heyBabe);
-                thread.start();
-                System.out.println("@@@@@@@@@@@@@@@ Started Thread № " + i);
-            } catch (Exception e){
-                System.out.println("############################### Can't start thread ");
-            }
+            final Thread thread = new Thread(heyBabe);
+
+            thread.start();
         }
     }
 
@@ -26,7 +22,7 @@ public class HeyBabe implements Runnable {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://dostavista.ru")
+            response = Unirest.get("https://nesiditsa.ru/")
                     .asString();
             if (nonNull(response) && response.getStatus() == 200) {
                 System.out.println("Status code " + response.getStatus());
