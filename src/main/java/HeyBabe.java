@@ -26,8 +26,6 @@ public class HeyBabe implements Runnable {
         } catch (Exception e) {
             hey();
         }
-
-        System.out.println(response);
     }
 
     public static void loop() {
