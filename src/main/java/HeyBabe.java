@@ -1,6 +1,8 @@
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 
+import static java.util.Objects.nonNull;
+
 public class HeyBabe implements Runnable {
 
     public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class HeyBabe implements Runnable {
     }
 
     private static void extracted() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5000; i++) {
             final HeyBabe heyBabe = new HeyBabe();
             final Thread thread = new Thread(heyBabe);
 
@@ -17,21 +19,27 @@ public class HeyBabe implements Runnable {
     }
 
     public static void hey() {
-        double v = Math.random() * 49 + 1;
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
             response = Unirest.get("https://medlabspb.ru")
                     .asString();
-            if (response.getStatus() == 200) {
+            if (nonNull(response) && response.getStatus() == 200) {
                 System.out.println("Status code " + response.getStatus());
             } else {
-                System.err.println("Status code -------- " + response.getStatus());
+                if (nonNull(response)) {
+                    System.err.println("Status code --------> " + response.getStatus());
+                } else {
+                    System.err.println("--------> Status code is undefined");
+                }
             }
         } catch (Exception e) {
             hey();
-            System.err.println("E Status code -------- " + response.getStatus());
-
+            if (nonNull(response)) {
+                System.err.println("E Status code --------> " + response.getStatus());
+            } else {
+                System.err.println("E --------> Status code is undefined");
+            }
         }
     }
 
