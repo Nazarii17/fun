@@ -23,6 +23,7 @@ public class HeyBabe implements Runnable {
         try {
             response = Unirest.get("https://medlabspb.ru")
                     .asString();
+            System.out.println(response);
         } catch (Exception e) {
             hey();
             System.out.println(response);
