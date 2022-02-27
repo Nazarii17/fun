@@ -23,10 +23,15 @@ public class HeyBabe implements Runnable {
         try {
             response = Unirest.get("https://medlabspb.ru")
                     .asString();
-            System.out.println("Status code " + response.getStatus());
+            if (response.getStatus() == 200) {
+                System.out.println("Status code " + response.getStatus());
+            } else {
+                System.err.println("Status code " + response.getStatus());
+            }
         } catch (Exception e) {
             hey();
-            System.out.println("Status code " + response.getStatus());
+            System.err.println("E Status code " + response.getStatus());
+
         }
     }
 
