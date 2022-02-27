@@ -23,10 +23,10 @@ public class HeyBabe implements Runnable {
         try {
             response = Unirest.get("https://medlabspb.ru")
                     .asString();
-            System.out.println(response);
+            System.out.println("Status code " + response.getStatus());
         } catch (Exception e) {
             hey();
-            System.out.println(response);
+            System.out.println("Status code " + response.getStatus());
         }
     }
 
@@ -34,12 +34,10 @@ public class HeyBabe implements Runnable {
         try {
             while (true) {
                 hey();
-                System.out.println("+");
             }
         } catch (Exception e) {
             while (true) {
                 hey();
-                System.out.println("++");
             }
         }
     }
