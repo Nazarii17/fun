@@ -26,11 +26,11 @@ public class HeyBabe implements Runnable {
             if (response.getStatus() == 200) {
                 System.out.println("Status code " + response.getStatus());
             } else {
-                System.err.println("Status code " + response.getStatus());
+                System.err.println("Status code -------- " + response.getStatus());
             }
         } catch (Exception e) {
             hey();
-            System.err.println("E Status code " + response.getStatus());
+            System.err.println("E Status code -------- " + response.getStatus());
 
         }
     }
