@@ -1,10 +1,9 @@
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class HeyBabe implements Runnable {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         extracted();
     }
 
@@ -31,10 +30,17 @@ public class HeyBabe implements Runnable {
         System.out.println(response);
     }
 
-    public static void loop() throws UnirestException {
-        while (true) {
-            hey();
-            System.out.println("+");
+    public static void loop() {
+        try {
+            while (true) {
+                hey();
+                System.out.println("+");
+            }
+        } catch (Exception e) {
+            while (true) {
+                hey();
+                System.out.println("++");
+            }
         }
     }
 
@@ -42,8 +48,8 @@ public class HeyBabe implements Runnable {
     public void run() {
         try {
             loop();
-        } catch (UnirestException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            loop();
         }
     }
 }
