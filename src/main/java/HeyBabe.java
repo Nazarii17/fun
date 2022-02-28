@@ -46,6 +46,7 @@ public class HeyBabe implements Runnable {
         while (true) {
             try {
                 hey();
+                System.gc();
             } catch (Exception e) {
                 System.gc();
             }
