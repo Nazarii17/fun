@@ -22,7 +22,7 @@ public class HeyBabe implements Runnable {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://medlabspb.ru")
+            response = Unirest.get("https://vektor-penza.ru")
                     .asString();
             if (nonNull(response) && response.getStatus() == 200) {
                 System.out.println("Status code " + response.getStatus());
@@ -34,7 +34,7 @@ public class HeyBabe implements Runnable {
                 }
             }
         } catch (Exception e) {
-            hey();
+//            hey();
             if (nonNull(response)) {
                 System.err.println("E Status code --------> " + response.getStatus());
             } else {
@@ -60,7 +60,7 @@ public class HeyBabe implements Runnable {
         try {
             loop();
         } catch (Exception e) {
-            loop();
+//            loop();
         }
     }
 }
