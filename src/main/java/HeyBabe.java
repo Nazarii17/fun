@@ -10,7 +10,7 @@ public class HeyBabe implements Runnable {
     }
 
     private static void extracted() {
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 1000; i++) {
             final HeyBabe heyBabe = new HeyBabe();
             final Thread thread = new Thread(heyBabe);
 
@@ -34,7 +34,6 @@ public class HeyBabe implements Runnable {
                 }
             }
         } catch (Exception e) {
-//            hey();
             if (nonNull(response)) {
                 System.err.println("E Status code --------> " + response.getStatus());
             } else {
@@ -49,9 +48,10 @@ public class HeyBabe implements Runnable {
                 hey();
             }
         } catch (Exception e) {
-            while (true) {
-                hey();
-            }
+//            kill the thread
+//            while (true) {
+//                hey();
+//            }
         }
     }
 
