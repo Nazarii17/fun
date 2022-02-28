@@ -6,7 +6,7 @@
 
     <groupId>groupId</groupId>
     <artifactId>FUCK_THE_russia</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2022</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -43,6 +43,8 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
+                            <finalName>fuck-ru</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                     </execution>
                 </executions>
