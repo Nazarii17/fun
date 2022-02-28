@@ -43,24 +43,17 @@ public class HeyBabe implements Runnable {
     }
 
     public static void loop() {
-        try {
-            while (true) {
+        while (true) {
+            try {
                 hey();
+            } catch (Exception e) {
+                System.gc();
             }
-        } catch (Exception e) {
-//            kill the thread
-//            while (true) {
-//                hey();
-//            }
         }
     }
 
     @Override
     public void run() {
-        try {
-            loop();
-        } catch (Exception e) {
-//            loop();
-        }
+        loop();
     }
 }
